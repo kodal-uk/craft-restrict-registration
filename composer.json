@@ -12,6 +12,7 @@
         "restrict",
         "registration"
     ],
+    "minimum-stability": "stable",
     "support": {
         "docs": "https://github.com/kodal-uk/craft-restrict-registration/blob/master/README.md",
         "issues": "https://github.com/kodal-uk/craft-restrict-registration/issues"
