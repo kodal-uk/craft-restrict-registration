@@ -1,0 +1,39 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * restrict registration plugin for Craft CMS 3.x
+ *
+ * restrict registration Settings.twig
+ *
+ * @author    Sean Jermey
+ * @copyright Copyright (c) 2019 Sean Jermey
+ * @link      https://github.com/seanjermey
+ * @package   RestrictRegistration
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{#{% do view.registerAssetBundle("MarshBerry\\RestrictRegistration\\assetbundles\\restrictregistration\\RestrictRegistrationAsset") %}#}
+
+{{ forms.editableTableField({
+    label: 'Allowed Domains',
+    instructions: 'Enter the domains that a users email address has to include in order to register to the site.',
+    id: 'allowedDomains',
+    name: 'allowedDomains',
+    cols: {
+        domain: {
+            type: 'singleline',
+            heading: 'Allowed Domains'|t('app'),
+            info: 'Email domains that are allowed to register to the site.'|t('app'),
+        }
+    },
+    rows: settings.allowedDomains
+}) }}
+
+{{ forms.textField({
+    label: "Validation error message",
+    name: 'errorMessage',
+    value: settings.errorMessage
+}) }}
